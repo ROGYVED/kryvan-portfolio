@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080d18" />
+    <meta
+      name="description"
+      content="Conheça os projetos digitais da KRYVAN."
+    />
+    <title>KRYVAN | Portfólio</title>
+
+    <style>
+      :root {
+        --bg: #070b13;
+        --panel: #101a2a;
+        --text: #f4f7fb;
+        --muted: #9caec5;
+        --blue: #168cff;
+        --cyan: #36d5ff;
+        --line: #26364b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: radial-gradient(ellipse at 50% -15%, #15345a, transparent 55%), var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        width: min(1000px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 12px 0;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+      }
+
+      .brand {
+        display: block;
+        width: 140px;
+        flex: 0 0 auto;
+      }
+
+      .brand img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .pill {
+        margin-left: auto;
+        font-size: 0.72rem;
+        color: #b9dfff;
+        border: 1px solid #268fff55;
+        background: #0b1b30;
+        padding: 7px 11px;
+        border-radius: 99px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 58px 0 38px;
+      }
+
+      .eyebrow {
+        color: var(--cyan);
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 7vw, 4.8rem);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+        margin: 16px auto;
+        max-width: 850px;
+      }
+
+      h1 span {
+        background: linear-gradient(100deg, #fff, #8edaff, #278cff);
+        background-clip: text;
+        color: transparent;
+      }
+
+      .intro {
+        max-width: 640px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 24px;
+      }
+
+      .stats span {
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 7px 12px;
+        color: #c8d7e8;
+        font-size: 0.8rem;
+      }
+
+      .projects-header {
+        margin: 0;
+      }
+
+      .sub {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 5px 0 20px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 19px;
+        background: linear-gradient(145deg, #111d2e, #0b111c);
+        transition: 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: #278dff88;
+      }
+
+      .visual {
+        overflow: hidden;
+        background: var(--panel);
+      }
+
+      .preview-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.42;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover .preview-image {
+        transform: scale(1.025);
+      }
+
+      .content {
+        padding: 17px;
+      }
+
+      .category {
+        font-size: 0.69rem;
+        color: var(--cyan);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 800;
+      }
+
+      .content h3 {
+        margin: 5px 0;
+        font-size: 1.18rem;
+      }
+
+      .content p {
+        margin: 0 0 15px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        min-height: 42px;
+      }
+
+      .visit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px 13px;
+        border-radius: 11px;
+        border: 1px solid #278dff66;
+        background: #0b2039;
+        font-weight: 800;
+        font-size: 0.88rem;
+      }
+
+      .visit:hover {
+        background: #12345a;
+      }
+
+      .visit b {
+        color: var(--cyan);
+        font-size: 1.1rem;
+      }
+
+      .cta {
+        margin: 26px 0 50px;
+        padding: 24px;
+        border: 1px solid #168cff55;
+        border-radius: 18px;
+        background: radial-gradient(ellipse at top right, #123b69, transparent 65%), #0c1626;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .cta p {
+        color: var(--muted);
+        margin: 5px 0 0;
+        font-size: 0.9rem;
+      }
+
+      .contact {
+        background: linear-gradient(100deg, #168cff, #31c8ff);
+        color: #03101d;
+        padding: 13px 16px;
+        border-radius: 12px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      footer {
+        text-align: center;
+        border-top: 1px solid var(--line);
+        padding: 22px 0 30px;
+        color: #8294ac;
+        font-size: 0.78rem;
+      }
+
+      footer strong {
+        color: #dcecff;
+        letter-spacing: 0.14em;
+      }
+
+      @media (max-width: 650px) {
+        .hero {
+          padding: 45px 0 32px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .brand {
+          width: 120px;
+        }
+
+        .cta {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .contact {
+          text-align: center;
+        }
+
+        .content p {
+          min-height: 0;
+        }
+
+        .pill {
+          font-size: 0.65rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .card {
+          transition: none;
+        }
+
+        .preview-image {
+          transition: none;
+        }
+
+        .card:hover {
+          transform: none;
+        }
+
+        .preview-image {
+          transition: none;
+        }
+
+        .card:hover .preview-image {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="top" class="wrap">
+      <div class="top">
+        <a class="brand" href="#top" aria-label="KRYVAN">
+          <img
+            src="assets/kryvan-logo.png"
+            alt="KRYVAN"
+            width="395"
+            height="211"
+          />
+        </a>
+        <span class="pill">PORTFÓLIO DIGITAL</span>
+      </div>
+    </header>
+
+    <section class="hero wrap" aria-label="Introdução do portfólio">
+      <div class="eyebrow">● Ideias transformadas em presença digital</div>
+      <h1>Sites feitos para <span>marcar presença.</span></h1>
+      <p class="intro">
+        Explore projetos desenvolvidos para diferentes segmentos. Escolha um site,
+        conheça a experiência e imagine o que podemos criar para o seu negócio.
+      </p>
+      <div class="stats" aria-label="Resumo dos projetos">
+        <span>05 projetos</span>
+        <span>Design responsivo</span>
+        <span>Experiências por segmento</span>
+      </div>
+    </section>
+
+    <main class="wrap">
+      <h2 class="projects-header">Explore os projetos</h2>
+      <p class="sub">Veja uma prévia real e abra o projeto completo.</p>
+
+      <section class="grid" aria-label="Lista de projetos">
+        <article class="card">
+          <div class="visual">
+            <img
+              class="preview-image"
+              src="assets/previews/barbearia.jpg"
+              alt="Prévia do site Black Label Barber"
+              width="1280"
+              height="900"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <div class="content">
+            <div class="category">Beleza & cuidados masculinos</div>
+            <h3>Black Label Barber</h3>
+            <p>Uma vitrine digital com identidade marcante para o universo da barbearia.</p>
+            <a class="visit" href="https://barbearia-phi-two.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Visitar projeto <b>↗</b>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="visual">
+            <img
+              class="preview-image"
+              src="assets/previews/blackfit.jpg"
+              alt="Prévia do site BlackFit Academy"
+              width="1280"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="content">
+            <div class="category">Fitness & performance</div>
+            <h3>BlackFit Academy</h3>
+            <p>Uma presença digital energética para academias e marcas fitness.</p>
+            <a class="visit" href="https://academia-eosin-phi.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Visitar projeto <b>↗</b>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="visual">
+            <img
+              class="preview-image"
+              src="assets/previews/derma-concept.jpg"
+              alt="Prévia do site Derma Concept"
+              width="1280"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="content">
+            <div class="category">Estética & bem-estar</div>
+            <h3>Derma Concept</h3>
+            <p>Uma apresentação elegante para clínicas e negócios de estética.</p>
+            <a class="visit" href="https://derma-concept.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Visitar projeto <b>↗</b>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="visual">
+            <img
+              class="preview-image"
+              src="assets/previews/nutrisport.jpg"
+              alt="Prévia do site Nutri Performance"
+              width="1280"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="content">
+            <div class="category">Nutrição esportiva</div>
+            <h3>Nutri Performance</h3>
+            <p>Um conceito de site para marcas de nutrição, suplementação e esporte.</p>
+            <a class="visit" href="https://nutrisport-navy.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Visitar projeto <b>↗</b>
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="visual">
+            <img
+              class="preview-image"
+              src="assets/previews/psico-premium.jpg"
+              alt="Prévia do site para atendimento psicológico"
+              width="1280"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="content">
+            <div class="category">Psicologia & desenvolvimento</div>
+            <h3>Psicólogo</h3>
+            <p>Uma experiência digital acolhedora e profissional para serviços de psicologia.</p>
+            <a class="visit" href="https://psico-premium-seven.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Visitar projeto <b>↗</b>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section class="cta" aria-label="Chamada para contato">
+        <div>
+          <h2>Vamos criar o próximo projeto juntos?</h2>
+          <p>Conte o que sua empresa precisa e vamos conversar.</p>
+        </div>
+        <a
+          class="contact"
+          href="https://wa.me/5579991009652?text=Ol%C3%A1%21%20Conheci%20o%20portf%C3%B3lio%20da%20KRYVAN%20e%20quero%20conversar%20sobre%20um%20site."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Conversar pelo WhatsApp ↗
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <strong>KRYVAN</strong><br />
+        Presença digital para negócios que querem evoluir.<br />
+        © <span id="year"></span> KRYVAN. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
